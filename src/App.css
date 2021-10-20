@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -28,6 +29,22 @@
   color: #61dafb;
 }
 
+.grid-container {
+  grid-gap: 10px;
+  display: grid;
+  height: calc(100vh - 10px);
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto 1fr 1fr 1fr auto auto;
+}
+
+.wheel-container {
+  height: 40rem;
+  background: url("./assets/easel.png") no-repeat;
+  background-position: center;
+  background-size: 500px;
+  background-repeat: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +52,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.puzzle-letter {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border: 1px solid black;
+}
+
+.puzzle-letter.space {
+  background: white;
+  border: 1px solid white;
+  color: white;
+}
+
+.puzzle-letter.open {
+  color: black;
+  background: white;
+}
+
+.puzzle-letter.closed {
+  color: gray;
+  background: gray;
+}
+
+button.spin-button {
+  width: 7rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+}
+
+.scorecard {
+  margin: auto;
 }
